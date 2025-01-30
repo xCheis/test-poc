@@ -1,0 +1,58 @@
+<div class="container-search">
+    <div class="line">
+    </div>
+    <div class="title">
+        <p class="fs-1 fw-bold"> Rastreo: #{{ticket}}</p>
+    </div>
+    <div *ngIf="!notFound" class="content ">
+        <div class="description container-shadow">
+            <p class="fs-4 text-start fw-bold">
+                Estatus del envío
+            </p>
+        </div>
+        <div  class="steps-container container-shadow">
+            <div class="step">
+                <div class="icon-progress">
+                    <div class="icon-container">
+                        <mat-icon >inventory_2</mat-icon>
+                    </div>
+                    <mat-progress-bar class="process" *ngIf="!data.status.enviado" mode="indeterminate"></mat-progress-bar>
+                    <mat-progress-bar class="process" *ngIf="data.status.enviado" mode="determinate" value="100"></mat-progress-bar>
+                </div>
+                <p>Preparando envío</p>
+            </div>
+            <div class="step">
+                <div class="icon-progress">
+                    <div class="icon-container">
+                        <mat-icon [ngClass]="{'icon-status': !data.status.enviado}" >local_shipping</mat-icon>
+                    </div>
+                    <mat-progress-bar class="process" *ngIf="data.status.enviado && !data.status.entregado" mode="indeterminate"></mat-progress-bar>
+                    <mat-progress-bar [ngClass]="{'process': data.status.enviado, 'not-process': !data.status.enviado}" *ngIf="!data.status.enviado || data.status.entregado " mode="determinate" value="100" disabled></mat-progress-bar>
+                </div>
+                <p>En transito</p>
+            </div>
+            <div >
+                <div class="icon-progress">
+                    <div class="icon-container">
+                        <mat-icon [ngClass]="{'icon-status': !data.status.entregado}">home</mat-icon>
+                    </div>
+                </div>
+                <p class="last-step">Entregado</p>
+            </div>
+            <div *ngIf="data.status.entregado" class="description-text">
+                <p class=" fs-1 fw-bold text-center"> Entregado</p>
+            </div>
+        </div>
+    </div>
+    <div >
+    </div>
+    <div class="button-evidence">
+        <p class="fs-6 fst-italic text-end"> Si necesitas ayuda no dudes en contactarnos. </p>
+        <button [ngClass]="{'icon-status': !data.status.entregado}" [disabled]="!data.status.entregado" mat-flat-button>Evidencia de Entrega</button>
+    </div>
+    <div *ngIf="notFound" class="not-found">
+        <img src="../../../assets/logo/Delivery-service-Orange.svg" alt="deliveryLogo" >
+        <p class="fs-3 fw-bold"> No encontramos tu pedido </p>
+        <p class="fs-6 fw-bold"> prueba mas tarde o revisa tu pedido </p>
+    </div>
+</div>

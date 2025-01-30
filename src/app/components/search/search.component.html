@@ -1,0 +1,28 @@
+<div class="container-search">
+    <div class="line">
+    </div>
+    <div class="title">
+        <p class="fs-1 fw-bold">Rastreo y Seguimiento</p>
+    </div>
+    <div class="content container-shadow">
+        <div class="description">
+            <p class="fs-5 text-start fw-lighter">
+                <span class="hide-label">¿Necesitas el estado de tu envío o una prueba de entrega?</span> 
+                Ingresa tu número de rastreo o número de referencia abajo.
+            </p>
+        </div>
+        <div class="input-search">
+            <div class="form-floating">
+                <textarea [ngClass]="{'invalid-field': ticket.invalid && ticket.touched, 'blink': ticket.invalid && ticket.touched }"   [formControl]="ticket" class="form-control" placeholder="Coloca en numero de rastreo aqui"
+                    id="ticketInput"></textarea>
+                <label [ngClass]="{'invalid-label': ticket.invalid && ticket.touched}"  for="ticketInput">Ingresa el número de guía <span class="hide-label">ó código de rastreo</span> </label>
+            </div>
+            <div class="help">
+                <p class="fs-6 fst-italic text-end"> Si necesitas ayuda no dudes en contactarnos. </p>
+            </div>
+        </div>
+    </div>
+    <div class="button-search">
+        <button (click)="searchByTicket()" mat-flat-button>Rastrear</button>
+    </div>
+</div>

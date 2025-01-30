@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Sriracha ; 
+    background-color: #F5F5F5 !important;
+}
+
+
+@media (max-width: 800px) {
+
+    .hide-label {
+        display: none
+    }
+}
+
+.container-shadow{
+    box-shadow: 0 6px 9px 0 rgba(0, 0, 0, 0.459);
+}
