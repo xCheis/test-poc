@@ -1,0 +1,7 @@
+{
+  "routes": {
+    "/test-poc/searchPackage": {},
+    "/test-poc/searchPackage/byTicket": {},
+    "/test-poc/searchPackage/statusByTicket": {}
+  }
+}
