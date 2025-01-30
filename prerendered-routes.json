@@ -1,7 +1,0 @@
-{
-  "routes": {
-    "/https://xCheis.github.io/test-poc/searchPackage": {},
-    "/https://xCheis.github.io/test-poc/searchPackage/byTicket": {},
-    "/https://xCheis.github.io/test-poc/searchPackage/statusByTicket": {}
-  }
-}
